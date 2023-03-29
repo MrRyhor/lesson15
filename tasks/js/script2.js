@@ -8,7 +8,7 @@ function Auto(initModel, initVolume, initLiters, initPlaces, initPassengers) {
 
 Auto.prototype.getFueling = function (initLiters) {
     let countLiters = 0
-    if (initLiters > this.volume) countLiters = initLiters
+    if (initLiters > this.volume) countLiters = this.volume
     else countLiters += initLiters
     return countLiters
 }
@@ -19,7 +19,7 @@ Auto.prototype.toString = function () {
 
 Auto.prototype.getPassengers = function (initPassengers) {
     let countPassengers = 0
-    if (initPassengers > this.places) countPassengers = initPassengers
+    if (initPassengers > this.places) countPassengers = this.places
     else countPassengers += initPassengers
     return countPassengers
 }
@@ -30,15 +30,15 @@ Auto.prototype.getDropOfPassengers = function (qntOfPassengers) {
     return this.passengers
 }
 
-let auto1 = new Auto('Iveco', 60, 60, 45, 31)
-let auto2 = new Auto('Fiat', 40, 40, 18, 12)
-let auto3 = new Auto('Renault', 50, 50, 23, 16)
+let auto1 = new Auto('Iveco', 60, 40, 45, 48)
+let auto2 = new Auto('Fiat', 40, 35, 18, 12)
+let auto3 = new Auto('Renault', 50, 65, 23, 16)
 
 console.log(auto1)
 console.log(auto2)
 console.log(auto3)
 
-auto1.getDropOfPassengers(12)
+auto1.getDropOfPassengers(46)
 
 console.log(`Кол-во пассажиров Auto2 = ${auto2.toString()}`)
 console.log(`Кол-во пассажиров Auto1 = ${auto1.toString()}`)
