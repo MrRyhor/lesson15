@@ -16,9 +16,9 @@ class MultiChecker {
         else return false
     }
 
-    getChecked() {
+    getChecked() {        
         if (this.getMultOperation() === true) return this.answersTrue += 1
-        else return this.answersFalse += 1
+        else return this.answersFalse += 1        
     }
 
     toString() {

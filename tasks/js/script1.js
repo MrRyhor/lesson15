@@ -16,24 +16,26 @@ ShootingRange.prototype.getShootingField = function (cellsLength, qntHare) {
     for (let i = 0; i < qntHare; i++) {
         let harePosition = this.getRandomIndex(cellsLength)
         if (shootingField[harePosition] !== 1) shootingField[harePosition] = 1
+        else i--
     }
     return shootingField
 }
 
-ShootingRange.prototype.getUserGame = function (qntShoot) {
+ShootingRange.prototype.getUserGame = function (qntShoot, qntHare) {
     // игра тир
-    for (let i = 0; i < this.shootingRangeLength.length, qntShoot > 0; i++) {
-        let userShoot = parseInt(prompt('Введите номер клетки куда стреляете:'))
-        if (this.shootingRangeLength[userShoot] === 1){
-            alert('Вы убили зайца')
+    for (let i = 0; i < qntShoot; i++) {
+        if (qntHare === 0)
             break
-        }else {
-            qntShoot--
-            alert(`Вы промазали. Осталось ${qntShoot} выстрелов`)
+        let userShoot = parseInt(prompt('Введите номер клетки куда стреляете:'))
+        if (this.shootingRangeLength[userShoot] === 1) {
+            qntHare--
+            alert(`Вы убили зайца. Осталось ${qntHare} зайцев`)
+        } else {
+            alert(`Вы промазали`)
         }
     }
     // выводим игровое поле
-   document.write('<table border=1>')
+    document.write('<table border=1>')
     for (let i = 0; i < this.shootingRangeLength.length; i++) {
         if (this.shootingRangeLength[i] === 1)
             document.write(`<td><p><span>${this.shootingRangeLength[i]}</span></p></td >`)
@@ -43,9 +45,9 @@ ShootingRange.prototype.getUserGame = function (qntShoot) {
     document.write('</table>')
 }
 
-let shootingRange = new ShootingRange(10, 1)
+let shootingRange = new ShootingRange(15, 4)
 console.log(shootingRange) // для теста
 
-shootingRange.getUserGame(5)
+shootingRange.getUserGame(8, 4)
 
 
