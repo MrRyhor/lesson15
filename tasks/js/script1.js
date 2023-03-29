@@ -22,7 +22,6 @@ ShootingRange.prototype.getShootingField = function (cellsLength, qntHare) {
 }
 
 ShootingRange.prototype.getUserGame = function (qntShoot, qntHare) {
-    // игра тир
     for (let i = 0; i < qntShoot; i++) {
         if (qntHare === 0)
             break
@@ -33,8 +32,10 @@ ShootingRange.prototype.getUserGame = function (qntShoot, qntHare) {
         } else {
             alert(`Вы промазали`)
         }
-    }
-    // выводим игровое поле
+    }    
+}
+
+ShootingRange.prototype.getResultOfGame = function () {
     document.write('<table border=1>')
     for (let i = 0; i < this.shootingRangeLength.length; i++) {
         if (this.shootingRangeLength[i] === 1)
@@ -49,5 +50,6 @@ let shootingRange = new ShootingRange(12, 3)
 console.log(shootingRange) // для теста
 
 shootingRange.getUserGame(7, 3)
+shootingRange.getResultOfGame()
 
 
