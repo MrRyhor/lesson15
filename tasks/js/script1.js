@@ -45,9 +45,9 @@ ShootingRange.prototype.getUserGame = function (qntShoot, qntHare) {
     document.write('</table>')
 }
 
-let shootingRange = new ShootingRange(15, 4)
+let shootingRange = new ShootingRange(12, 3)
 console.log(shootingRange) // для теста
 
-shootingRange.getUserGame(8, 4)
+shootingRange.getUserGame(7, 3)
 
 

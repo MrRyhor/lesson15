@@ -9,16 +9,14 @@ class MultiChecker {
     }
 
     getMultOperation() {
-        let firstNum = this.checkedNum
-        let secondNum = this.getRandomNum()
-        let userAnswers = parseInt(prompt(`${firstNum} * ${secondNum} = ?`))
-        if (userAnswers === firstNum * secondNum) return true
-        else return false
-    }
-
-    getChecked() {        
-        if (this.getMultOperation() === true) return this.answersTrue += 1
-        else return this.answersFalse += 1        
+        for (let i = 0; i < 11; i++) {
+            let firstNum = this.checkedNum
+            let secondNum = this.getRandomNum()
+            let userAnswers = parseInt(prompt(`${firstNum} * ${secondNum} = ?`))
+            if (userAnswers === firstNum * secondNum) this.answersTrue += 1
+            else this.answersFalse += 1
+        }
+        return `${this.answersTrue} and ${this.answersFalse}`
     }
 
     toString() {
@@ -27,6 +25,6 @@ class MultiChecker {
 }
 
 let res = new MultiChecker(3)
-res.getChecked()
+res.getMultOperation()
 res.toString()
 console.log(res)
