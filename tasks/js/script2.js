@@ -40,7 +40,7 @@ console.log(auto3)
 
 auto1.getDropOfPassengers(46)
 
-console.log(`Кол-во пассажиров Auto2 = ${auto2.toString()}`)
+console.log(`Кол-во пассажиров Auto2 = ${auto2}`)
 console.log(`Кол-во пассажиров Auto1 = ${auto1.toString()}`)
 
 result1.innerHTML = '<span>см. в консоль</span>'

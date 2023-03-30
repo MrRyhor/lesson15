@@ -20,11 +20,11 @@ class MultiChecker {
     }
 
     toString() {
-        return document.write(`<p>Checked Num = ${this.checkedNum}<br> Answers True = ${this.answersTrue}<br> Answers False = ${this.answersFalse}</p>`)
+        return `<p>Checked Num = ${this.checkedNum}<br> Answers True = ${this.answersTrue}<br> Answers False = ${this.answersFalse}</p>`
     }
 }
 
 let res = new MultiChecker(3)
 res.getMultOperation()
-res.toString()
+document.write(res)
 console.log(res)
